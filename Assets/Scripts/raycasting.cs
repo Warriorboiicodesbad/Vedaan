@@ -26,7 +26,8 @@ public class raycasting : MonoBehaviour
     {
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layersToHit)) 
         {
-            Debug.Log(hit.collider.gameObject.name);
+            ItemScript data = hit.collider.gameObject.GetComponent<ItemScript>();
+            Debug.Log(data.itemData);
         }
     }
 }
