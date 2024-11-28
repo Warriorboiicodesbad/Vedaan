@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
-  m_Name: Rice (1 cup)
+  m_Name: Greek yogurt non fat
   m_EditorClassIdentifier: 
-  calories: 204
-  protien: 0
-  carbohydrates: 0
-  sodium: 387
-  potassium: 55
-  dietaryFiber: 0
-  sugars: 0
-  totalFat: 0
+  calories: 145
+  sodium: 88
+  totalFat: 1
+  potassium: 345
   saturatedFat: 0
+  carbohydrates: 9
   polySaturatedFat: 0
+  dietaryFiber: 0
   monounSaturatedFat: 0
+  sugars: 8
   transFat: 0
-  cholesterol: 0
+  protien: 25
+  cholesterol: 12
   vitaminA: 0
+  calcium: 27
   vitaminB: 0
-  calcium: 0
-  iron: 0
+  iron: 1

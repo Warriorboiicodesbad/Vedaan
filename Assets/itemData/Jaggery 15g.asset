@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
-  m_Name: Rice (1 cup)
+  m_Name: Jaggery 15g
   m_EditorClassIdentifier: 
-  calories: 204
-  protien: 0
-  carbohydrates: 0
-  sodium: 387
-  potassium: 55
-  dietaryFiber: 0
-  sugars: 0
+  calories: 60
+  sodium: 0
   totalFat: 0
+  potassium: 0
   saturatedFat: 0
+  carbohydrates: 14
   polySaturatedFat: 0
+  dietaryFiber: 0
   monounSaturatedFat: 0
+  sugars: 0
   transFat: 0
+  protien: 0
   cholesterol: 0
   vitaminA: 0
-  vitaminB: 0
   calcium: 0
+  vitaminB: 0
   iron: 0

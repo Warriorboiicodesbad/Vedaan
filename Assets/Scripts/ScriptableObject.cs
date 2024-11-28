@@ -5,21 +5,26 @@ using UnityEngine;
 public class ScriptableObjecte : ScriptableObject
 {
     public int calories;
-    public int protien;
-    public int carbohydrates;
     public float sodium;
-    public float potassium;
-    public float dietaryFiber;
-    public float sugars;
     public float totalFat;
+    public float potassium;
     public float saturatedFat;
+    public int carbohydrates;
     public float polySaturatedFat;
+    public float dietaryFiber;
     public float monounSaturatedFat;
+    public float sugars;
     public float transFat;
+    public int protien;
     public float cholesterol;
     public float vitaminA;
-    public float vitaminB;
     public float calcium;
+    public float vitaminB;
     public float iron;
-
+    
+    
+    
+    
+    
+    
 }
