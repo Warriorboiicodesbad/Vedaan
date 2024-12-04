@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class raycasting : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class raycasting : MonoBehaviour
     Ray ray;
     public float maxDistance = 100f;
     public LayerMask layersToHit;
+    public UnityEvent<ScriptableObject> onPressedI, onPressedE;
 
        
     void Start()
@@ -27,7 +29,15 @@ public class raycasting : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layersToHit)) 
         {
             ItemScript data = hit.collider.gameObject.GetComponent<ItemScript>();
-            Debug.Log(data.itemData);
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                onPressedI.Invoke(data.itemData);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                onPressedE.Invoke(data.itemData);
+            }
+
         }
     }
 }
