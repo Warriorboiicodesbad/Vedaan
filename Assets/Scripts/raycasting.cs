@@ -5,11 +5,12 @@ using UnityEngine.Events;
 
 public class raycasting : MonoBehaviour
 {
-    public GameObject instructionPanel;
+    public GameObject instructionPanel, informationPanel;
     Ray ray;
     public float maxDistance = 100f;
     public LayerMask layersToHit;
     public UnityEvent<ScriptableObjecte> onPressedI, onPressedE;
+    
 
        
     void Start()
@@ -45,6 +46,7 @@ public class raycasting : MonoBehaviour
         else
         {
             instructionPanel.SetActive(false);
+            informationPanel.SetActive(false);
         }
     }
 }
