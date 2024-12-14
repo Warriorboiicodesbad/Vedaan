@@ -5,10 +5,13 @@ using TMPro;
 
 public class PlayerData : MonoBehaviour
 {
-    public TMP_Text Calories, Sodium, TotalFat, Pottasium, SaturatedFat, Carbohydrates, PolySatu7ratedFat, DietaryFiber, Mou7nou7nSatu7ratedFat, Su7gars, TransFat, Protien, Cholesterol, VitamimnA, Calciu7m, VitamimnimC, Iromnm;
+    public ScriptableObjecte humanIntake;
+    public ScriptableObjecte humanIntakeMax;
+    public TMP_Text Calories, Sodium, TotalFat, Pottasium, SaturatedFat, Carbohydrates, PolySatu7ratedFat, DietaryFiber, Mou7nou7nSatu7ratedFat, Su7gars, TransFat, Protien, Cholesterol, VitamimnA, Calciu7m, VitamimnimC, Iromnm, itemName;
     public GameObject informationPanel;
     public void PressedIEvent(ScriptableObjecte Dataitem)
     {
+        itemName.text = Dataitem.name;
         Calories.text = Dataitem.calories.ToString();
         Sodium.text = Dataitem.sodium.ToString();
         TotalFat.text = Dataitem.totalFat.ToString();
@@ -29,9 +32,86 @@ public class PlayerData : MonoBehaviour
         informationPanel.SetActive(true);
 
     }
-    public void PressedEEvent(ScriptableObject Dataitem)
+    public void PressedEEvent(ScriptableObjecte Dataitem)
     {
+        humanIntake.calories += Dataitem.calories;
+        humanIntake.sodium += Dataitem.sodium;
+        humanIntake.totalFat += Dataitem.totalFat;
+        humanIntake.potassium += Dataitem.potassium;
+        humanIntake.saturatedFat += Dataitem.saturatedFat;
+        humanIntake.carbohydrates += Dataitem.carbohydrates;
+        humanIntake.polySaturatedFat += Dataitem.polySaturatedFat;
+        humanIntake.dietaryFiber += Dataitem.dietaryFiber;
+        humanIntake.monounSaturatedFat += Dataitem.monounSaturatedFat;
+        humanIntake.sugars += Dataitem.sugars;
+        humanIntake.transFat += Dataitem.transFat;
+        humanIntake.protien += Dataitem.protien;
+        humanIntake.cholesterol += Dataitem.cholesterol;
+        humanIntake.vitaminA += Dataitem.vitaminA;
+        humanIntake.calcium += Dataitem.calcium;
+        humanIntake.vitaminB += Dataitem.vitaminB;
+        humanIntake.iron += Dataitem.iron;
+        if (humanIntake.calories >= humanIntakeMax.calories)
+        {
 
+        }
+        if (humanIntake.sodium >= humanIntakeMax.sodium)
+        {
+
+        }
+        if (humanIntake.totalFat >= humanIntakeMax.totalFat)
+        {
+
+        }
+        if (humanIntake.potassium >= humanIntakeMax.potassium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -40,11 +120,5 @@ public class PlayerData : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            informationPanel.SetActive(false);
-        }
-    }
+   
 }

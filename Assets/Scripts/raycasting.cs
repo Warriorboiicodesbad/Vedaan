@@ -29,13 +29,10 @@ public class raycasting : MonoBehaviour
     {
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layersToHit)) 
         {
-            Debug.Log("raaa");
             instructionPanel.SetActive(true);
             ItemScript data = hit.collider.gameObject.GetComponent<ItemScript>();
-            if (Input.GetKeyDown(KeyCode.I))
-            {
+            
                 onPressedI.Invoke(data.itemData);
-            }
             
             if (Input.GetKeyDown(KeyCode.E))
             {

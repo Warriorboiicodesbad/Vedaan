@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
-  m_Name: HumanIntake 1
+  m_Name: Pineapple 1 cup 1
   m_EditorClassIdentifier: 
-  calories: 0
-  sodium: 0
+  calories: 83
+  sodium: 2
   totalFat: 0
-  potassium: 0
+  potassium: 180
   saturatedFat: 0
-  carbohydrates: 0
+  carbohydrates: 22
   polySaturatedFat: 0
-  dietaryFiber: 0
+  dietaryFiber: 2
   monounSaturatedFat: 0
-  sugars: 0
+  sugars: 16
   transFat: 0
-  protien: 0
+  protien: 1
   cholesterol: 0
   vitaminA: 0
-  calcium: 0
-  vitaminB: 0
-  iron: 0
+  calcium: 2
+  vitaminB: 131
+  iron: 3

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
-  m_Name: HumanIntake 1
+  m_Name: Chicken Breast 100g raw
   m_EditorClassIdentifier: 
-  calories: 0
-  sodium: 0
-  totalFat: 0
-  potassium: 0
+  calories: 110
+  sodium: 65
+  totalFat: 1
+  potassium: 255
   saturatedFat: 0
   carbohydrates: 0
   polySaturatedFat: 0
@@ -23,9 +23,9 @@ MonoBehaviour:
   monounSaturatedFat: 0
   sugars: 0
   transFat: 0
-  protien: 0
-  cholesterol: 0
+  protien: 31
+  cholesterol: 58
   vitaminA: 0
-  calcium: 0
-  vitaminB: 0
-  iron: 0
+  calcium: 1
+  vitaminB: 2
+  iron: 4
