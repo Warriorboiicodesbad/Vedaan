@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerData : MonoBehaviour
     public ScriptableObjecte humanIntakeMax;
     public TMP_Text Calories, Sodium, TotalFat, Pottasium, SaturatedFat, Carbohydrates, PolySatu7ratedFat, DietaryFiber, Mou7nou7nSatu7ratedFat, Su7gars, TransFat, Protien, Cholesterol, VitamimnA, Calciu7m, VitamimnimC, Iromnm, itemName;
     public GameObject informationPanel;
+    public Slider CalorieSlider;
     public void PressedIEvent(ScriptableObjecte Dataitem)
     {
         itemName.text = Dataitem.name;
@@ -35,14 +37,24 @@ public class PlayerData : MonoBehaviour
     public void PressedEEvent(ScriptableObjecte Dataitem)
     {
         humanIntake.calories += Dataitem.calories;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.sodium += Dataitem.sodium;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.totalFat += Dataitem.totalFat;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.potassium += Dataitem.potassium;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.saturatedFat += Dataitem.saturatedFat;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.carbohydrates += Dataitem.carbohydrates;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.polySaturatedFat += Dataitem.polySaturatedFat;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.dietaryFiber += Dataitem.dietaryFiber;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         humanIntake.monounSaturatedFat += Dataitem.monounSaturatedFat;
+        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
+        // finish this the slider thing
         humanIntake.sugars += Dataitem.sugars;
         humanIntake.transFat += Dataitem.transFat;
         humanIntake.protien += Dataitem.protien;
@@ -53,7 +65,7 @@ public class PlayerData : MonoBehaviour
         humanIntake.iron += Dataitem.iron;
         if (humanIntake.calories >= humanIntakeMax.calories)
         {
-
+            
         }
         if (humanIntake.sodium >= humanIntakeMax.sodium)
         {
@@ -112,6 +124,7 @@ public class PlayerData : MonoBehaviour
         {
 
         }
+
     }
     // Start is called before the first frame update
     void Start()

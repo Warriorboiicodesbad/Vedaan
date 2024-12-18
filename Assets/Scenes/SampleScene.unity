@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1991150291}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 547308787}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1385975687}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -3815,22 +3815,22 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1545584421}
-  - {fileID: 2125400155}
-  - {fileID: 1807604467}
-  - {fileID: 2004527354}
-  - {fileID: 2019804233}
-  - {fileID: 838751411}
-  - {fileID: 1326777468}
-  - {fileID: 1869600463}
-  - {fileID: 265019025}
-  - {fileID: 1391885878}
-  - {fileID: 394678851}
-  - {fileID: 1601068857}
-  - {fileID: 1007291631}
-  - {fileID: 845459490}
-  - {fileID: 1580937076}
-  - {fileID: 1136449049}
   - {fileID: 403240065}
+  - {fileID: 1136449049}
+  - {fileID: 1580937076}
+  - {fileID: 845459490}
+  - {fileID: 1007291631}
+  - {fileID: 1601068857}
+  - {fileID: 394678851}
+  - {fileID: 1391885878}
+  - {fileID: 265019025}
+  - {fileID: 1869600463}
+  - {fileID: 1326777468}
+  - {fileID: 838751411}
+  - {fileID: 2019804233}
+  - {fileID: 2004527354}
+  - {fileID: 1807604467}
+  - {fileID: 2125400155}
   m_Father: {fileID: 867357723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6149,7 +6149,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 588254683}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -6239,7 +6239,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 611085017}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -6479,7 +6479,7 @@ GameObject:
   - component: {fileID: 867357726}
   - component: {fileID: 867357725}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Consumption Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7170,7 +7170,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 50951441}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -7778,7 +7778,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 18552864}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -8904,7 +8904,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 847756197}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -9481,7 +9481,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 598147129}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -10634,7 +10634,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 235795154}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -10858,7 +10858,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 512366872}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -11082,7 +11082,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 591982382}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -12670,7 +12670,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1719534790}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -12899,7 +12899,19 @@ MonoBehaviour:
         m_CallState: 2
   onPressedE:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953583581}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: PressedEEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1858215476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13131,7 +13143,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1447365110}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -14049,6 +14061,7 @@ MonoBehaviour:
   Iromnm: {fileID: 1144074642}
   itemName: {fileID: 1341529218}
   informationPanel: {fileID: 301726462}
+  CalorieSlider: {fileID: 1545584422}
 --- !u!1 &1963018990
 GameObject:
   m_ObjectHideFlags: 0
@@ -14760,7 +14773,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1912486100}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -14850,7 +14863,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 415569955}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -15889,7 +15902,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2057431886}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2500
+  m_MaxValue: 1
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
