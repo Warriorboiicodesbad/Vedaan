@@ -12,6 +12,22 @@ public class PlayerData : MonoBehaviour
     public TMP_Text CaloriesConsumed, SodiumConsumed, TotalFatConsumed, PottasiumConsumed, SaturatedFatConsumed, CarbohydratesConsumed, PolySatu7ratedFatConsumed, DietaryFiberConsumed, Mou7nou7nSatu7ratedFatConsumed, Su7garsConsumed, TransFatConsumed, ProtienConsumed, CholesterolConsumed, VitamimnAConsumed, Calciu7mConsumed, VitamimnimCConsumed, IromnmConsumed;
     public GameObject informationPanel;
     public Slider CalorieSlider;
+    public Slider SodiumSlider;
+    public Slider TotalFatSlider;
+    public Slider PottasiumSlider;
+    public Slider SaturatedFatSlider;
+    public Slider CarbohydratesSlider;
+    public Slider PolySaturatedFatSlider;
+    public Slider DietaryFiberSlider;
+    public Slider MonounSaturatedFatSlider;
+    public Slider SugarsSlider;
+    public Slider TransFatSlider;
+    public Slider ProtienSlider;
+    public Slider CholesterolSlider;
+    public Slider VitaminASlider;
+    public Slider CalciumSlider;
+    public Slider VitaminCSlider;
+    public Slider IronSlider;
     public void PressedIEvent(ScriptableObjecte Dataitem)
     {
         itemName.text = Dataitem.name;
@@ -68,26 +84,43 @@ public class PlayerData : MonoBehaviour
         humanIntake.dietaryFiber += Dataitem.dietaryFiber;
         CalorieSlider.value = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
         DietaryFiberConsumed.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
+
         humanIntake.monounSaturatedFat += Dataitem.monounSaturatedFat;
         CalorieSlider.value = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
         Mou7nou7nSatu7ratedFatConsumed.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
-        // finish this the slider thing
+        
         humanIntake.sugars += Dataitem.sugars;
+        CalorieSlider.value = (float)humanIntake.sugars / humanIntakeMax.sugars;
         Su7garsConsumed.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
+
         humanIntake.transFat += Dataitem.transFat;
+        CalorieSlider.value = (float)humanIntake.transFat / humanIntakeMax.transFat;
         TransFatConsumed.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
+
         humanIntake.protien += Dataitem.protien;
+        CalorieSlider.value = (float)humanIntake.protien / humanIntakeMax.protien;
         ProtienConsumed.text = humanIntake.protien.ToString() + "/" + humanIntakeMax.protien.ToString();
+
         humanIntake.cholesterol += Dataitem.cholesterol;
+        CalorieSlider.value = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
         CholesterolConsumed.text = humanIntake.cholesterol.ToString() + "/" + humanIntakeMax.cholesterol.ToString();
+
         humanIntake.vitaminA += Dataitem.vitaminA;
+        CalorieSlider.value = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
         VitamimnAConsumed.text = humanIntake.vitaminA.ToString() + "/" + humanIntakeMax.vitaminA.ToString();
+
         humanIntake.calcium += Dataitem.calcium;
+        CalorieSlider.value = (float)humanIntake.calcium / humanIntakeMax.calcium;
         Calciu7mConsumed.text = humanIntake.calcium.ToString() + "/" + humanIntakeMax.calcium.ToString();
+
         humanIntake.vitaminB += Dataitem.vitaminB;
+        CalorieSlider.value = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
         VitamimnAConsumed.text = humanIntake.vitaminB.ToString() + "/" + humanIntakeMax.vitaminB.ToString();
+
         humanIntake.iron += Dataitem.iron;
+        CalorieSlider.value = (float)humanIntake.iron / humanIntakeMax.iron;
         IromnmConsumed.text = humanIntake.iron.ToString() + "/" + humanIntakeMax.iron.ToString();
+
         if (humanIntake.calories >= humanIntakeMax.calories)
         {
             
@@ -104,7 +137,44 @@ public class PlayerData : MonoBehaviour
         {
 
         }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        {
+
+        }
+        if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
+        {
+
+        }
+        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        {
+
+        }
+        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        {
+
+        }
+        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        {
+
+        }
+        if (humanIntake.sugars >= humanIntakeMax.sugars)
+        {
+
+        }
+        if (humanIntake.transFat >= humanIntakeMax.transFat)
+        {
+
+
+        }
+        if (humanIntake.protien >= humanIntakeMax.protien)
+        {
+
+        }
+        if (humanIntake.cholesterol >= humanIntakeMax.cholesterol)
+        {
+
+        }
+        if (humanIntake.vitaminA >= humanIntakeMax.vitaminA)
         {
 
         }
@@ -112,40 +182,11 @@ public class PlayerData : MonoBehaviour
         {
 
         }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        if (humanIntake.vitaminB >= humanIntakeMax.vitaminB)
         {
 
         }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
-        {
-
-        }
-        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        if (humanIntake.iron >= humanIntakeMax.iron)
         {
 
         }
