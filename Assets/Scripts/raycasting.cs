@@ -9,7 +9,9 @@ public class raycasting : MonoBehaviour
     Ray ray;
     public float maxDistance = 100f;
     public LayerMask layersToHit;
-    public UnityEvent<ScriptableObjecte> onPressedI, onPressedE;
+    public UnityEvent<ScriptableObjecte>  onPressedE, onShowPanel;
+    
+    
     
 
        
@@ -31,8 +33,8 @@ public class raycasting : MonoBehaviour
         {
             instructionPanel.SetActive(true);
             ItemScript data = hit.collider.gameObject.GetComponent<ItemScript>();
-            
-                onPressedI.Invoke(data.itemData);
+            onShowPanel.Invoke(data.itemData);
+              
             
             if (Input.GetKeyDown(KeyCode.E))
             {

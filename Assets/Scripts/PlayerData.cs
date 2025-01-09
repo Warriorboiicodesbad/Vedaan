@@ -28,7 +28,8 @@ public class PlayerData : MonoBehaviour
     public Slider CalciumSlider;
     public Slider VitaminCSlider;
     public Slider IronSlider;
-    public void PressedIEvent(ScriptableObjecte Dataitem)
+    public GameObject sliderPanel;
+    public void onShowPanel(ScriptableObjecte Dataitem)
     {
         itemName.text = Dataitem.name;
         Calories.text = Dataitem.calories.ToString();
@@ -58,67 +59,67 @@ public class PlayerData : MonoBehaviour
         CaloriesConsumed.text = humanIntake.calories.ToString() + "/" + humanIntakeMax.calories.ToString();
 
         humanIntake.sodium += Dataitem.sodium;
-        CalorieSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
+        SodiumSlider.value = (float)humanIntake.calories / humanIntakeMax.calories;
         SodiumConsumed.text = humanIntake.sodium.ToString() + "/" + humanIntakeMax.sodium.ToString();
 
         humanIntake.totalFat += Dataitem.totalFat;
-        CalorieSlider.value = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
+        TotalFatSlider.value = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
         TotalFatConsumed.text = humanIntake.totalFat.ToString() + "/" + humanIntakeMax.totalFat.ToString();
 
         humanIntake.potassium += Dataitem.potassium;
-        CalorieSlider.value = (float)humanIntake.potassium / humanIntakeMax.potassium;
+        PottasiumSlider.value = (float)humanIntake.potassium / humanIntakeMax.potassium;
         PottasiumConsumed.text = humanIntake.potassium.ToString() + "/" + humanIntakeMax.potassium.ToString();
         
         humanIntake.saturatedFat += Dataitem.saturatedFat;
-        CalorieSlider.value = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        SaturatedFatSlider.value = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
         SaturatedFat.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
 
         humanIntake.carbohydrates += Dataitem.carbohydrates;
-        CalorieSlider.value = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
+        CarbohydratesSlider.value = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
         CarbohydratesConsumed.text = humanIntake.carbohydrates.ToString() + "/" + humanIntakeMax.carbohydrates.ToString();
 
         humanIntake.polySaturatedFat += Dataitem.polySaturatedFat;
-        CalorieSlider.value = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        PolySaturatedFatSlider.value = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
         PolySatu7ratedFatConsumed.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
 
         humanIntake.dietaryFiber += Dataitem.dietaryFiber;
-        CalorieSlider.value = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        DietaryFiberSlider.value = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
         DietaryFiberConsumed.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
 
         humanIntake.monounSaturatedFat += Dataitem.monounSaturatedFat;
-        CalorieSlider.value = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        MonounSaturatedFatSlider.value = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
         Mou7nou7nSatu7ratedFatConsumed.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
         
         humanIntake.sugars += Dataitem.sugars;
-        CalorieSlider.value = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        SugarsSlider.value = (float)humanIntake.sugars / humanIntakeMax.sugars;
         Su7garsConsumed.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
 
         humanIntake.transFat += Dataitem.transFat;
-        CalorieSlider.value = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        TransFatSlider.value = (float)humanIntake.transFat / humanIntakeMax.transFat;
         TransFatConsumed.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
 
         humanIntake.protien += Dataitem.protien;
-        CalorieSlider.value = (float)humanIntake.protien / humanIntakeMax.protien;
+        ProtienSlider.value = (float)humanIntake.protien / humanIntakeMax.protien;
         ProtienConsumed.text = humanIntake.protien.ToString() + "/" + humanIntakeMax.protien.ToString();
 
         humanIntake.cholesterol += Dataitem.cholesterol;
-        CalorieSlider.value = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
+        CholesterolSlider.value = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
         CholesterolConsumed.text = humanIntake.cholesterol.ToString() + "/" + humanIntakeMax.cholesterol.ToString();
 
         humanIntake.vitaminA += Dataitem.vitaminA;
-        CalorieSlider.value = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
+        VitaminASlider.value = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
         VitamimnAConsumed.text = humanIntake.vitaminA.ToString() + "/" + humanIntakeMax.vitaminA.ToString();
 
         humanIntake.calcium += Dataitem.calcium;
-        CalorieSlider.value = (float)humanIntake.calcium / humanIntakeMax.calcium;
+        CalciumSlider.value = (float)humanIntake.calcium / humanIntakeMax.calcium;
         Calciu7mConsumed.text = humanIntake.calcium.ToString() + "/" + humanIntakeMax.calcium.ToString();
 
         humanIntake.vitaminB += Dataitem.vitaminB;
-        CalorieSlider.value = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
+        VitaminCSlider.value = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
         VitamimnAConsumed.text = humanIntake.vitaminB.ToString() + "/" + humanIntakeMax.vitaminB.ToString();
 
         humanIntake.iron += Dataitem.iron;
-        CalorieSlider.value = (float)humanIntake.iron / humanIntakeMax.iron;
+        IronSlider.value = (float)humanIntake.iron / humanIntakeMax.iron;
         IromnmConsumed.text = humanIntake.iron.ToString() + "/" + humanIntakeMax.iron.ToString();
 
         if (humanIntake.calories >= humanIntakeMax.calories)
@@ -197,7 +198,22 @@ public class PlayerData : MonoBehaviour
     {
 
     }
-
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            pressIEvent();
+        }
+    }
     // Update is called once per frame
-   
+    public void pressIEvent()
+    {
+        if (sliderPanel.activeInHierarchy)
+        {
+            sliderPanel.SetActive(false);
+        }
+        else
+        {
+            sliderPanel.SetActive(true);       }
+    }
 }
