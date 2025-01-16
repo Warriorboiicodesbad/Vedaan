@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
-public class menuManager : MonoBehaviour
+
+public class MenuManager : MonoBehaviour
 {
+    public string gameSceneName;
+
     // Start is called before the first frame update
-  public void changeScene()
+    public void PlayButtonAction()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(gameSceneName);
     }
-    public void gameExit()
+    public void ExitButtonAction()
     {
 #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
 #else
-Application.Quit();
+        Application.Quit();
 #endif
     }
 }
