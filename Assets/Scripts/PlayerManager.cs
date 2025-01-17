@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
     public TMP_Text vitaminCConsumedCount;
     public TMP_Text ironConsumedCount;
 
-    [Header("User Consumption Panel Sliders")]
+    [Header("User Consumption Panel Progress Bar")]
     public Image CalorieProgressBar;
     public Image SodiumProgressBar;
     public Image TotalFatProgressBar;
@@ -66,6 +66,25 @@ public class PlayerManager : MonoBehaviour
     public Image CalciumProgressBar;
     public Image VitaminCProgressBar;
     public Image IronProgressBar;
+
+    [Header("User Consumption Panel Percentage Texts")]
+    public TMP_Text caloriesPercentageText;
+    public TMP_Text sodiumPercentageText;
+    public TMP_Text totalFatPercentageText;
+    public TMP_Text pottasiumPercentageText;
+    public TMP_Text saturatedFatPercentageText;
+    public TMP_Text carbohydratesPercentageText;
+    public TMP_Text polySaturatedFatPercentageText;
+    public TMP_Text dietaryFibrePercentageText;
+    public TMP_Text monounSaturatedFatPercentageText;
+    public TMP_Text sugarPercentageText;
+    public TMP_Text transFatPercentageText;
+    public TMP_Text proteinPercentageText;
+    public TMP_Text cholestrolPercentageText;
+    public TMP_Text vitaminAPercentageText;
+    public TMP_Text calciumPercentageText;
+    public TMP_Text vitaminCPercentageText;
+    public TMP_Text ironPercentageText;
 
     [Header("Panel References")]
     public GameObject userConsumptionPanel;
@@ -97,72 +116,108 @@ public class PlayerManager : MonoBehaviour
     }
     public void PressEAction(ItemData itemData)
     {
+        float fillRatio = 0;
+
         humanIntake.calories += itemData.calories;
-        CalorieProgressBar.fillAmount = (float)humanIntake.calories / humanIntakeMax.calories;
+        fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
+        CalorieProgressBar.fillAmount = fillRatio;
+        caloriesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         caloriesConsumedCount.text = humanIntake.calories.ToString() + "/" + humanIntakeMax.calories.ToString();
 
         humanIntake.sodium += itemData.sodium;
-        SodiumProgressBar.fillAmount = (float)humanIntake.calories / humanIntakeMax.calories;
+        fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
+        SodiumProgressBar.fillAmount = fillRatio;
+        sodiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         sodiumConsumedCount.text = humanIntake.sodium.ToString() + "/" + humanIntakeMax.sodium.ToString();
 
         humanIntake.totalFat += itemData.totalFat;
-        TotalFatProgressBar.fillAmount = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
+        fillRatio = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
+        TotalFatProgressBar.fillAmount = fillRatio;
+        totalFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         totalFatConsumedCount.text = humanIntake.totalFat.ToString() + "/" + humanIntakeMax.totalFat.ToString();
 
         humanIntake.potassium += itemData.potassium;
-        PottasiumProgressBar.fillAmount = (float)humanIntake.potassium / humanIntakeMax.potassium;
+        fillRatio = (float)humanIntake.potassium / humanIntakeMax.potassium;
+        PottasiumProgressBar.fillAmount = fillRatio;
+        pottasiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         pottasiumConsumedCount.text = humanIntake.potassium.ToString() + "/" + humanIntakeMax.potassium.ToString();
         
         humanIntake.saturatedFat += itemData.saturatedFat;
-        SaturatedFatProgressBar.fillAmount = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        SaturatedFatProgressBar.fillAmount = fillRatio;
+        saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
 
         humanIntake.carbohydrates += itemData.carbohydrates;
-        CarbohydratesProgressBar.fillAmount = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
+        fillRatio = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
+        CarbohydratesProgressBar.fillAmount = fillRatio;
+        carbohydratesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         carbohydratesConsumedCount.text = humanIntake.carbohydrates.ToString() + "/" + humanIntakeMax.carbohydrates.ToString();
 
         humanIntake.polySaturatedFat += itemData.polySaturatedFat;
-        PolySaturatedFatProgressBar.fillAmount = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        PolySaturatedFatProgressBar.fillAmount = fillRatio;
+        polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
 
         humanIntake.dietaryFiber += itemData.dietaryFiber;
-        DietaryFiberProgressBar.fillAmount = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        DietaryFiberProgressBar.fillAmount = fillRatio;
+        dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
 
         humanIntake.monounSaturatedFat += itemData.monounSaturatedFat;
-        MonounSaturatedFatProgressBar.fillAmount = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        MonounSaturatedFatProgressBar.fillAmount = fillRatio;
+        monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
         
         humanIntake.sugars += itemData.sugars;
-        SugarProgressBar.fillAmount = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        SugarProgressBar.fillAmount = fillRatio;
+        sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
 
         humanIntake.transFat += itemData.transFat;
-        TransFatProgressBar.fillAmount = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        TransFatProgressBar.fillAmount = fillRatio;
+        transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
 
         humanIntake.protien += itemData.protien;
-        ProteinProgressBar.fillAmount = (float)humanIntake.protien / humanIntakeMax.protien;
+        fillRatio = (float)humanIntake.protien / humanIntakeMax.protien;
+        ProteinProgressBar.fillAmount = fillRatio;
+        proteinPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         proteinConsumedCount.text = humanIntake.protien.ToString() + "/" + humanIntakeMax.protien.ToString();
 
         humanIntake.cholesterol += itemData.cholesterol;
-        CholesterolProgressBar.fillAmount = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
+        fillRatio = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
+        CholesterolProgressBar.fillAmount = fillRatio;
+        cholestrolPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         cholesterolConsumedCount.text = humanIntake.cholesterol.ToString() + "/" + humanIntakeMax.cholesterol.ToString();
 
         humanIntake.vitaminA += itemData.vitaminA;
-        VitaminAProgressBar.fillAmount = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
+        fillRatio = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
+        VitaminAProgressBar.fillAmount = fillRatio;
+        vitaminAPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         vitaminAConsumedCount.text = humanIntake.vitaminA.ToString() + "/" + humanIntakeMax.vitaminA.ToString();
 
         humanIntake.calcium += itemData.calcium;
-        CalciumProgressBar.fillAmount = (float)humanIntake.calcium / humanIntakeMax.calcium;
+        fillRatio = (float)humanIntake.calcium / humanIntakeMax.calcium;
+        CalciumProgressBar.fillAmount = fillRatio;
+        calciumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         calciumConsumedCount.text = humanIntake.calcium.ToString() + "/" + humanIntakeMax.calcium.ToString();
 
         humanIntake.vitaminB += itemData.vitaminB;
-        VitaminCProgressBar.fillAmount = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
+        fillRatio = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
+        VitaminCProgressBar.fillAmount = fillRatio;
+        vitaminCPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         vitaminCConsumedCount.text = humanIntake.vitaminB.ToString() + "/" + humanIntakeMax.vitaminB.ToString();
 
         humanIntake.iron += itemData.iron;
-        IronProgressBar.fillAmount = (float)humanIntake.iron / humanIntakeMax.iron;
+        fillRatio = (float)humanIntake.iron / humanIntakeMax.iron;
+        IronProgressBar.fillAmount = fillRatio;
+        ironPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         ironConsumedCount.text = humanIntake.iron.ToString() + "/" + humanIntakeMax.iron.ToString();
 
         if (humanIntake.calories >= humanIntakeMax.calories)

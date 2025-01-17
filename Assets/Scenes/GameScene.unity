@@ -24323,6 +24323,23 @@ MonoBehaviour:
   CalciumProgressBar: {fileID: 138639855}
   VitaminCProgressBar: {fileID: 1982149606}
   IronProgressBar: {fileID: 220798862}
+  caloriesPercentageText: {fileID: 504613738}
+  sodiumPercentageText: {fileID: 764837864}
+  totalFatPercentageText: {fileID: 1761581759}
+  pottasiumPercentageText: {fileID: 1165900469}
+  saturatedFatPercentageText: {fileID: 1654878856}
+  carbohydratesPercentageText: {fileID: 1653044177}
+  polySaturatedFatPercentageText: {fileID: 2070963015}
+  dietaryFibrePercentageText: {fileID: 76151751}
+  monounSaturatedFatPercentageText: {fileID: 1097312466}
+  sugarPercentageText: {fileID: 1943321740}
+  transFatPercentageText: {fileID: 945849263}
+  proteinPercentageText: {fileID: 564331221}
+  cholestrolPercentageText: {fileID: 1640648278}
+  vitaminAPercentageText: {fileID: 1779159113}
+  calciumPercentageText: {fileID: 1691399808}
+  vitaminCPercentageText: {fileID: 1341760509}
+  ironPercentageText: {fileID: 1156464388}
   userConsumptionPanel: {fileID: 867357722}
   itemInformationPanel: {fileID: 301726462}
   instructionPanel: {fileID: 1083182128}
