@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
-    public ScriptableObjecte itemData;
+    public ItemData itemData;
 }

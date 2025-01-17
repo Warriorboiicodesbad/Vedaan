@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "NewItem", menuName = "Game/Item", order = 1)]
-public class ScriptableObjecte : ScriptableObject
+public class ItemData : ScriptableObject
 {
     public int calories;
     public float sodium;
@@ -20,11 +20,5 @@ public class ScriptableObjecte : ScriptableObject
     public float vitaminA;
     public float calcium;
     public float vitaminB;
-    public float iron;
-    
-    
-    
-    
-    
-    
+    public float iron;  
 }
