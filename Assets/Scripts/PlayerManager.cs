@@ -122,19 +122,19 @@ public class PlayerManager : MonoBehaviour
         fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
         CalorieProgressBar.fillAmount = fillRatio;
         caloriesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        caloriesConsumedCount.text = humanIntake.calories.ToString() + "/" + humanIntakeMax.calories.ToString();
+        caloriesConsumedCount.text = humanIntake.calories.ToString() + "/" + humanIntakeMax.calories.ToString()+"kcal";
 
         humanIntake.sodium += itemData.sodium;
         fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
         SodiumProgressBar.fillAmount = fillRatio;
         sodiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        sodiumConsumedCount.text = humanIntake.sodium.ToString() + "/" + humanIntakeMax.sodium.ToString();
+        sodiumConsumedCount.text = humanIntake.sodium.ToString() + "/" + humanIntakeMax.sodium.ToString()+ "mg";
 
         humanIntake.totalFat += itemData.totalFat;
         fillRatio = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
         TotalFatProgressBar.fillAmount = fillRatio;
         totalFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        totalFatConsumedCount.text = humanIntake.totalFat.ToString() + "/" + humanIntakeMax.totalFat.ToString();
+        totalFatConsumedCount.text = humanIntake.totalFat.ToString() + "/" + humanIntakeMax.totalFat.ToString()+ "g";
 
         humanIntake.potassium += itemData.potassium;
         fillRatio = (float)humanIntake.potassium / humanIntakeMax.potassium;
