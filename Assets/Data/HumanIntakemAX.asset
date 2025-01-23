@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
-  m_Name: HumanIntake
+  m_Name: HumanIntakemAX
   m_EditorClassIdentifier: 
-  calories: 0
-  sodium: 0
-  totalFat: 0
-  potassium: 0
-  saturatedFat: 0
-  carbohydrates: 0
-  polySaturatedFat: 0
-  dietaryFiber: 0
-  monounSaturatedFat: 0
-  sugars: 0
-  transFat: 0
-  protien: 0
-  cholesterol: 0
-  vitaminA: 0
-  calcium: 0
-  vitaminB: 0
-  iron: 0
+  calories: 2500
+  sodium: 1750
+  totalFat: 55
+  potassium: 3400
+  saturatedFat: 12
+  carbohydrates: 280
+  polySaturatedFat: 27
+  dietaryFiber: 35
+  monounSaturatedFat: 28
+  sugars: 27
+  transFat: 2
+  protien: 120
+  cholesterol: 110
+  vitaminA: 100
+  calcium: 100
+  vitaminB: 100
+  iron: 100

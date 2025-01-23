@@ -9,6 +9,16 @@ public class PlayerManager : MonoBehaviour
     public ItemData humanIntake;
     public ItemData humanIntakeMax;
 
+    public PlayerData playerData;
+    public TimerController timer;
+    public PlayerController playerController;
+    public TMP_Text dayText;
+
+    public GameObject gameEndPanel;
+    public TMP_Text gameEndPanelFeedbackTxt;
+    public TMP_Text gameEndPanelLoadLevelBtnTxt;
+    public Button gameEndPanelLoadLevelbtn;
+
     [Header("Item Information Panel Texts")]
     public TMP_Text itemNameTxt;
     public TMP_Text itemCaloriesCount;
@@ -90,6 +100,15 @@ public class PlayerManager : MonoBehaviour
     public GameObject userConsumptionPanel;
     public GameObject itemInformationPanel;
     public GameObject instructionPanel;
+
+
+    private bool hasConsumedAll = false;
+
+
+    private void Start()
+    {
+        PressEAction(humanIntake);
+    }
 
     public void ShowUserConsumptionPanel(ItemData itemData)
     {
@@ -220,74 +239,164 @@ public class PlayerManager : MonoBehaviour
         ironPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         ironConsumedCount.text = humanIntake.iron.ToString() + "/" + humanIntakeMax.iron.ToString();
 
+        bool checkConsumedAll = true;
         if (humanIntake.calories >= humanIntakeMax.calories)
         {
-            
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.sodium >= humanIntakeMax.sodium)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.totalFat >= humanIntakeMax.totalFat)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.potassium >= humanIntakeMax.potassium)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.sugars >= humanIntakeMax.sugars)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.transFat >= humanIntakeMax.transFat)
         {
-
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.protien >= humanIntakeMax.protien)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.cholesterol >= humanIntakeMax.cholesterol)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.vitaminA >= humanIntakeMax.vitaminA)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.calcium >= humanIntakeMax.calcium)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.vitaminB >= humanIntakeMax.vitaminB)
         {
-
+            checkConsumedAll &= true;
         }
+        else
+        {
+            checkConsumedAll &= false;
+        }
+
         if (humanIntake.iron >= humanIntakeMax.iron)
         {
+            checkConsumedAll &= true;
+        }
+        else
+        {
+            checkConsumedAll &= false;
+        }
 
+        if(checkConsumedAll)
+        {
+            hasConsumedAll = checkConsumedAll;
+            OnGameOver();
         }
     }
 
@@ -326,5 +435,55 @@ public class PlayerManager : MonoBehaviour
     {
         instructionPanel.SetActive(false);
         itemInformationPanel.SetActive(false);
+    }
+
+    public void OnGameOver()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        gameEndPanel.SetActive(true);
+        if(hasConsumedAll)
+        {
+            gameEndPanelFeedbackTxt.text = "You intake was completed.";
+            gameEndPanelLoadLevelBtnTxt.text = "Start Next Day";
+
+            // Disable Player Controller
+            playerController.enabled = false;
+            // Save CurrentDay's Data
+            CopyItemData(humanIntake, playerData.GetCurrentDayData());
+
+            //IncrementDay
+            playerData.day++;
+
+            if (playerData.day > playerData.maxDays)
+            {
+                gameEndPanelLoadLevelbtn.interactable = false;
+                gameEndPanelLoadLevelBtnTxt.text = "No More Levels to Load";
+            }
+        }
+        else
+        {
+            gameEndPanelFeedbackTxt.text = "You intake was not completed.";
+            gameEndPanelLoadLevelBtnTxt.text = "Reload current Day";
+        }
+    }
+
+    private void CopyItemData(ItemData source, ItemData target)
+    {
+        string json = JsonUtility.ToJson(source);
+        JsonUtility.FromJsonOverwrite(json, target);
+    }
+
+    public void LoadLevel()
+    {
+        humanIntake.ResetValues();
+        PressEAction(humanIntake);
+        playerController.enabled = true;
+        dayText.text = $"Day {playerData.day}";
+
+        //Disable Panel
+
+        //Start Timer
+        timer.StartTimer();
+        gameEndPanel.SetActive(false);
     }
 }
