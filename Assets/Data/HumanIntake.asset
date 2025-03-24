@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: HumanIntake
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   calories: 11834
   sodium: 6935
   totalFat: 491
@@ -29,3 +30,22 @@ MonoBehaviour:
   calcium: 194.8
   vitaminB: 917
   iron: 606
+=======
+  calories: 2500
+  sodium: 1750
+  totalFat: 55
+  potassium: 3400
+  saturatedFat: 12
+  carbohydrates: 280
+  polySaturatedFat: 27
+  dietaryFiber: 35
+  monounSaturatedFat: 28
+  sugars: 27
+  transFat: 2
+  protien: 120
+  cholesterol: 110
+  vitaminA: 100
+  calcium: 100
+  vitaminB: 100
+  iron: 100
+>>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5

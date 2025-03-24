@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public int jumpForce;
 
     private float xRotation = 0f;
-    private bool canJump = false;
 
     void Start()
     {
@@ -34,21 +33,11 @@ public class PlayerController : MonoBehaviour
 
         virtualcamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-
-        if (canJump && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            canJump = false;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Ground")
-        {
-            canJump = true;
-        }
-    }
+    
 }
 

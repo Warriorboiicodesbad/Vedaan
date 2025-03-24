@@ -21,25 +21,4 @@ public class ItemData : ScriptableObject
     public float calcium;
     public float vitaminB;
     public float iron;  
-
-    public void ResetValues()
-    {
-        calories = 0;
-        sodium = 0;
-        totalFat = 0;
-        potassium = 0;
-        saturatedFat = 0;
-        carbohydrates = 0;
-        polySaturatedFat = 0;
-        dietaryFiber = 0;
-        monounSaturatedFat = 0;
-        sugars = 0;
-        transFat = 0;
-        protien = 0;
-        cholesterol = 0;
-        vitaminA = 0;
-        calcium = 0;
-        vitaminB = 0;
-        iron = 0;
-    }
 }
