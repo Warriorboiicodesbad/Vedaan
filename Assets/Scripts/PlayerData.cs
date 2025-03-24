@@ -7,6 +7,8 @@ public class PlayerData : ScriptableObject
 {
     public int day = 1, maxDays;
     public ItemData day1, day2, day3;
+    public int height, weight, age;
+    public bool gender;
 
     public ItemData GetCurrentDayData()
     {

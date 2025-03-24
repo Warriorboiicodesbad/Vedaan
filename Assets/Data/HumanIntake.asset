@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: HumanIntake
   m_EditorClassIdentifier: 
-  calories: 0
-  sodium: 0
-  totalFat: 0
-  potassium: 0
-  saturatedFat: 0
-  carbohydrates: 0
-  polySaturatedFat: 0
-  dietaryFiber: 0
-  monounSaturatedFat: 0
-  sugars: 0
+  calories: 11834
+  sodium: 6935
+  totalFat: 491
+  potassium: 12968
+  saturatedFat: 166
+  carbohydrates: 1217
+  polySaturatedFat: 36.4
+  dietaryFiber: 84.2
+  monounSaturatedFat: 54.8
+  sugars: 802.8
   transFat: 0
-  protien: 0
-  cholesterol: 0
-  vitaminA: 0
-  calcium: 0
-  vitaminB: 0
-  iron: 0
+  protien: 818
+  cholesterol: 1545
+  vitaminA: 1748.4
+  calcium: 194.8
+  vitaminB: 917
+  iron: 606

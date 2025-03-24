@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
+  m_Name: Whole wheat bread 1 slice
+  m_EditorClassIdentifier: 
+  calories: 223
+  sodium: 112
+  totalFat: 1
+  potassium: 144
+  saturatedFat: 1.5
+  carbohydrates: 47
+  polySaturatedFat: 0.6
+  dietaryFiber: 1
+  monounSaturatedFat: 0.2
+  sugars: 26
+  transFat: 0
+  protien: 2
+  cholesterol: 0
+  vitaminA: 0.1
+  calcium: 1.2
+  vitaminB: 0
+  iron: 14.5

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
+  m_Name: Curd 200g
+  m_EditorClassIdentifier: 
+  calories: 122
+  sodium: 92
+  totalFat: 7
+  potassium: 310
+  saturatedFat: 4
+  carbohydrates: 9
+  polySaturatedFat: 0
+  dietaryFiber: 0
+  monounSaturatedFat: 2
+  sugars: 9
+  transFat: 0
+  protien: 7
+  cholesterol: 30
+  vitaminA: 4
+  calcium: 18
+  vitaminB: 2
+  iron: 1
