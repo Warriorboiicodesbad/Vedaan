@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 00b4f48e11b07d04d9046d858a5f3e79, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2787,7 +2787,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49d5510e7ada47e4f8ee83234d546074, type: 2}
+  - {fileID: 2100000, guid: 8bef781725e74a04cb7d520fdad8e456, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5026,7 +5026,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e02795c649676047a9ee6edbc03a1d0, type: 2}
+  - {fileID: 2100000, guid: 58e419ede0b261d418164f85fe50ca09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11656,7 +11656,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31e4da039b732214998031951a9feec7, type: 2}
+  - {fileID: 2100000, guid: 7bc5a9af87b1eb549a4e8142543039e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14752,7 +14752,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6d5f0f0ff5e0b6479a48f3d6a3642de, type: 2}
+  - {fileID: 2100000, guid: 13b89596d2d604a4db8375c600602bab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24507,24 +24507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1982037239}
-  timerBGFill: {fileID: 1439508029}
   timeInSeconds: 150
   isCountingDown: 1
-  OnTimerOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1953583581}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: OnGameOver
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &965402374 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 229986584189364735, guid: 8eaae8bd5d9e5b946aea12e489976bb4, type: 3}
@@ -26059,6 +26043,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -28756,7 +28741,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c0fdf87366cab145a2abb097dea3083, type: 2}
+  - {fileID: 2100000, guid: e7437d6d9539d8d4ca1c8033e46ae0dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36508,7 +36493,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa9a57239465f0f43bf609ee0d8ccf3c, type: 2}
+  - {fileID: 2100000, guid: f711550b4d4d3cb47bbbf01c6e8f1092, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -39263,7 +39248,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4463b8bd2f2328448f0a44de9b86c47, type: 2}
+  - {fileID: 2100000, guid: 94018fc667244c840be621c92fcc885f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50015,14 +50000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanIntake: {fileID: 11400000, guid: 0e7630eef34652647a9f173fa679afdd, type: 2}
   humanIntakeMax: {fileID: 11400000, guid: ddb1dd7c68333d24bb7b23dd0fda2ab8, type: 2}
-  playerData: {fileID: 11400000, guid: d661e157eb8793d4e909f85d645cef5f, type: 2}
-  timer: {fileID: 963194231}
-  playerController: {fileID: 1953583575}
-  dayText: {fileID: 840987398}
-  gameEndPanel: {fileID: 288819361}
-  gameEndPanelFeedbackTxt: {fileID: 1200253098}
-  gameEndPanelLoadLevelBtnTxt: {fileID: 1522077568}
-  gameEndPanelLoadLevelbtn: {fileID: 1625401483}
   itemNameTxt: {fileID: 1341529218}
   itemCaloriesCount: {fileID: 566584562}
   itemSodiumCount: {fileID: 842111151}

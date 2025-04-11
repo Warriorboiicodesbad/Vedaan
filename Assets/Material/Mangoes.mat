@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - <noninit>:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -46,11 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: d5dc0cd3141bf43428b86da9122f6e14, type: 3}
-=======
         m_Texture: {fileID: 2800000, guid: 21c2501f277a5c948ae05ceb242fc976, type: 3}
->>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,11 +72,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-<<<<<<< HEAD
     - _Glossiness: 0.5
-=======
-    - _Glossiness: 0.469
->>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 1

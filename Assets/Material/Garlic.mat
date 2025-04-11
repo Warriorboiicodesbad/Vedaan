@@ -9,13 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Garlic
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-<<<<<<< HEAD
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-=======
-  m_Parent: {fileID: 2100000, guid: 5ca3fa962f59cfd498db95223fabf9d7, type: 2}
-  m_ModifiedSerializedProperties: 16
->>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5
   m_ValidKeywords:
   - _ALPHATEST_ON
   m_InvalidKeywords: []
@@ -30,7 +25,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-<<<<<<< HEAD
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -52,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6840c4543c73fc14c85236636f4c755a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4f01d31db66c14d4f951653c62776600, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -65,15 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-=======
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4f01d31db66c14d4f951653c62776600, type: 3}
->>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-<<<<<<< HEAD
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -93,11 +82,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-=======
-    - _DstBlend: 0
-    - _Glossiness: 0.469
-    - _Mode: 1
-    - _ZWrite: 1
-    m_Colors: []
->>>>>>> 1b5d1a95eae6739655ea49cb5e602d6bbb7402a5
   m_BuildTextureStacks: []
