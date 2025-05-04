@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Coffee 1 cup
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: d38833da4195dc048875dacbb187a310, type: 3}
   calories: 2
   sodium: 5
   totalFat: 0

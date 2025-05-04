@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Strawberry jam 1 tbsp
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 40936bb775a9abc4ea5d26b140b0e0f4, type: 3}
   calories: 50
   sodium: 6
   totalFat: 0

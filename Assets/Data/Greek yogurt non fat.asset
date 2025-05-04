@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Greek yogurt non fat
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 8603048be40338747a23031beca0bdcf, type: 3}
   calories: 145
   sodium: 88
   totalFat: 1

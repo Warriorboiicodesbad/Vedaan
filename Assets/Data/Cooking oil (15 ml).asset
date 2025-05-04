@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Cooking oil (15 ml)
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 15cf892633ad277408f4788d0c902b31, type: 3}
   calories: 120
   sodium: 0
   totalFat: 14

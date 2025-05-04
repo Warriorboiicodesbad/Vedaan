@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Packet noodles 62 grams
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 0a1231c624b05484db42d41e75778010, type: 3}
   calories: 460
   sodium: 700
   totalFat: 8

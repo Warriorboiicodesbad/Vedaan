@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Peanut Butter 2 tbsp
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: c88835bc99b01204a8b6096aa9f032d6, type: 3}
   calories: 200
   sodium: 145
   totalFat: 16

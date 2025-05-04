@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Mutton 100g
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 2d6d4a7acf3e9244f9e7bf9226130dc4, type: 3}
   calories: 294
   sodium: 72
   totalFat: 21

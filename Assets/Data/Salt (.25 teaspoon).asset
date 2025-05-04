@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Salt (.25 teaspoon)
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 8a3fbcc698132824ebe38a674adfc0ab, type: 3}
   calories: 0
   sodium: 581
   totalFat: 0

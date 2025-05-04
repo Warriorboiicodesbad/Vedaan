@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Curd 200g
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 63401942633f46f498f2f0975dcdcccf, type: 3}
   calories: 122
   sodium: 92
   totalFat: 7

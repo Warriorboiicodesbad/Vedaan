@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Paneer 28g
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 737c60c4175f031439670986f2dd469d, type: 3}
   calories: 100
   sodium: 10
   totalFat: 8

@@ -91,7 +91,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject itemInformationPanel;
     public GameObject instructionPanel;
 
-    public void ShowUserConsumptionPanel(ItemData itemData)
+    public void ShowItemInformationPanel(ItemData itemData)
     {
         itemNameTxt.text = itemData.name;
         itemCaloriesCount.text = itemData.calories.ToString();
@@ -114,7 +114,7 @@ public class PlayerManager : MonoBehaviour
 
         itemInformationPanel.SetActive(true);
     }
-    public void PressEAction(ItemData itemData)
+    public void ConsumeItem(ItemData itemData)
     {
         float fillRatio = 0;
 
@@ -295,11 +295,11 @@ public class PlayerManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-            PressIAction();
+            ShowUserConsumptionPanel();
         }
     }
 
-    public void PressIAction()
+    public void ShowUserConsumptionPanel()
     {
         if (userConsumptionPanel.activeInHierarchy)
         {
@@ -314,11 +314,11 @@ public class PlayerManager : MonoBehaviour
     public void OnRayCastHitAction(ItemData itemData)
     {
         instructionPanel.SetActive(true);
-        ShowUserConsumptionPanel(itemData);
+        ShowItemInformationPanel(itemData);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PressEAction(itemData);
+            ConsumeItem(itemData);
         }
     }
 

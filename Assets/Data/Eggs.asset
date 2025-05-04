@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Eggs
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: b8d6f2d07c528374fa45f1e79c5984c3, type: 3}
   calories: 72
   sodium: 65
   totalFat: 5

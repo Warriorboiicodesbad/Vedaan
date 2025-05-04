@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Chicken Breast 100g raw
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 90c3c4ad0970a094591fb78bad285345, type: 3}
   calories: 110
   sodium: 65
   totalFat: 1

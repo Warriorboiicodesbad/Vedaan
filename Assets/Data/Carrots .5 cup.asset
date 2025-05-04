@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Carrots .5 cup
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 913e01f3e5f145a46a14cf764fc28367, type: 3}
   calories: 26
   sodium: 44
   totalFat: 0

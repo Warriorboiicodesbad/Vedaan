@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Whole wheat bread 1 slice
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: eb91631f89d32514eb4ecaec6a4a32a2, type: 3}
   calories: 223
   sodium: 112
   totalFat: 1

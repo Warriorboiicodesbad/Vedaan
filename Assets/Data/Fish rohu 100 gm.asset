@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Fish rohu 100 gm
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 721edf411a257714fa8f215a67033ea9, type: 3}
   calories: 97
   sodium: 101
   totalFat: 1

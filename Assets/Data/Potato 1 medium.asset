@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Potato 1 medium
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: e8d10e9f7add0464dae18d91425e94a6, type: 3}
   calories: 164
   sodium: 13
   totalFat: 0

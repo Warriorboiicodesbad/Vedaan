@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Grapes (green) 1 cup
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: a26a40f05cfbcc34e85e8162b859fee7, type: 3}
   calories: 62
   sodium: 2
   totalFat: 0

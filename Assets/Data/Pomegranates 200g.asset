@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Pomegranates 200g
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 4d320f667f54c4f47bfaa26d45cc760f, type: 3}
   calories: 64
   sodium: 5
   totalFat: 1

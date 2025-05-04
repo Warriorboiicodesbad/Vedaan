@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Mongoes 100grams
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: d5dc0cd3141bf43428b86da9122f6e14, type: 3}
   calories: 60
   sodium: 1
   totalFat: 0

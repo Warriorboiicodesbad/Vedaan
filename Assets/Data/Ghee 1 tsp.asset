@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Ghee 1 tsp
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 14211ac222971934eb101a2c4b53b217, type: 3}
   calories: 40
   sodium: 0
   totalFat: 5

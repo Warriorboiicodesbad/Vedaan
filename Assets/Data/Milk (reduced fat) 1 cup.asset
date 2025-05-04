@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Milk (reduced fat) 1 cup
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 1fef19559b4227740b0c371e77d081c7, type: 3}
   calories: 122
   sodium: 92
   totalFat: 7
