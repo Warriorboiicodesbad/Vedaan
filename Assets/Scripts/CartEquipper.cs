@@ -6,10 +6,9 @@ public class CartEquipper : MonoBehaviour
 {
     [SerializeField] GameObject cartObject;
     [SerializeField] Transform cameraTr, cartPositionTr;
-    [SerializeField] TMP_Text cartText;
 
     private Vector3 initialOffset;
-    private bool canEquip = false, isEquiped = false;
+    private bool canEquip = false;
 
     void Start()
     {
@@ -21,7 +20,7 @@ public class CartEquipper : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if (canEquip) EquipCart();
+            if (canEquip && !GameData.isCartEquiped) EquipCart();
         }
     }
 
@@ -46,42 +45,43 @@ public class CartEquipper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!isEquiped)
+        if(!GameData.isCartEquiped)
         {
             if (other.gameObject.CompareTag("Cart"))
             {
                 canEquip = true;
-                cartText.text = "Press E to Equip Cart";
-                cartText.transform.parent.gameObject.SetActive(true);
+                InstructionsManager.Instance.AddInstruction(GameData.cartEquipText);
             }
         }
         else
         {
-            cartText.text = "Cart already Equiped";
-            cartText.transform.parent.gameObject.SetActive(true);
+            InstructionsManager.Instance.AddInstruction(GameData.cartAlreadyEquipedText);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(!isEquiped)
+        if(!GameData.isCartEquiped)
         {
             if (other.gameObject.CompareTag("Cart"))
             {
                 canEquip = false;
-                cartText.transform.parent.gameObject.SetActive(false);
             }
         }
         else
         {
-            cartText.transform.parent.gameObject.SetActive(false);
+
         }
+
+        InstructionsManager.Instance.RemoveInstruction(GameData.cartEquipText);
+        InstructionsManager.Instance.RemoveInstruction(GameData.cartAlreadyEquipedText);
     }
 
     private void EquipCart()
     {
+        InstructionsManager.Instance.RemoveInstruction(GameData.cartEquipText);
+        InstructionsManager.Instance.AddInstruction(GameData.cartAlreadyEquipedText);
         cartObject.SetActive(true); // or Instantiate if needed
-        isEquiped = true;
-        cartText.transform.parent.gameObject.SetActive(false);
+        GameData.isCartEquiped = true;
     }
 }
