@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CartManager : MonoBehaviour
 {
-    [SerializeField] GameObject cartItemPrefab, cartPanel;
+    [SerializeField] public GameObject cartItemPrefab, cartPanel;
     [SerializeField] Transform cartItemParentTr;
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerManager playerManager;
@@ -29,14 +29,6 @@ public class CartManager : MonoBehaviour
         }
     }
 
-    public void BuyCart()
-    {
-        foreach(var item in itemsCountDictionary)
-        {
-
-        }
-    }
-
     public void AddToCart(ItemData itemData)
     {
         if(itemsCountDictionary.ContainsKey(itemData))
@@ -53,8 +45,12 @@ public class CartManager : MonoBehaviour
             cartItem.itemData = itemData;
             cartItem.itemNameTxt.text = itemData.name;
             cartItem.itemImage.sprite = itemData.Image;
+            cartItem.decreaseButton.onClick.AddListener(() => { playerManager.RemoveConsumeItem(itemData); });
+            cartItem.cartItemButton.onClick.AddListener(() => { playerManager.ShowItemInformationPanel(itemData); });
             cartItem.Increase();
         }
+
+        playerManager.AddConsumeItem(itemData);
     }
 
     public void OnRayCastHitAction(ItemData itemData)

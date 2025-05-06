@@ -13,9 +13,10 @@ public class PlayerController : MonoBehaviour
 
     private float xRotation = 0f;
 
-    void Start()
+    void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        rb.WakeUp();
     }
 
     void Update()

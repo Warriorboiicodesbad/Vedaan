@@ -9,6 +9,7 @@ public class CartItem : MonoBehaviour
 {
     public TMP_Text itemNameTxt, quantityText;
     public Image itemImage;
+    public Button decreaseButton, cartItemButton;
     [HideInInspector] public ItemData itemData;
 
     private int quantity = 0;
@@ -26,7 +27,8 @@ public class CartItem : MonoBehaviour
         if (quantity == 0) return;
 
         quantity = Mathf.Max(quantity-1, 0);
+        quantityText.text = quantity.ToString();
 
-        if(quantity == 0) gameObject.SetActive(false);
+        if (quantity == 0) gameObject.SetActive(false);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -87,9 +88,17 @@ public class PlayerManager : MonoBehaviour
     public TMP_Text ironPercentageText;
 
     [Header("Panel References")]
-    public GameObject userConsumptionPanel;
+    public CanvasGroup userConsumptionCG;
     public GameObject itemInformationPanel;
     public GameObject instructionPanel;
+    public ItemData emptyItem;
+
+    private bool isRunningConsumptionPanelAnimation = false;
+
+    private void Start()
+    {
+        AddConsumeItem(emptyItem);
+    }
 
     public void ShowItemInformationPanel(ItemData itemData)
     {
@@ -114,7 +123,8 @@ public class PlayerManager : MonoBehaviour
 
         itemInformationPanel.SetActive(true);
     }
-    public void ConsumeItem(ItemData itemData)
+
+    public void AddConsumeItem(ItemData itemData)
     {
         float fillRatio = 0;
 
@@ -289,6 +299,211 @@ public class PlayerManager : MonoBehaviour
         {
 
         }
+
+        AnimateUserConsumption();
+    }
+
+    public void RemoveConsumeItem(ItemData itemData)
+    {
+        float fillRatio = 0;
+
+        humanIntake.calories -= itemData.calories;
+        fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
+        CalorieProgressBar.fillAmount = fillRatio;
+        caloriesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        caloriesConsumedCount.text = humanIntake.calories.ToString() + "/" + humanIntakeMax.calories.ToString() + "kcal";
+
+        humanIntake.sodium -= itemData.sodium;
+        fillRatio = (float)humanIntake.calories / humanIntakeMax.calories;
+        SodiumProgressBar.fillAmount = fillRatio;
+        sodiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        sodiumConsumedCount.text = humanIntake.sodium.ToString() + "/" + humanIntakeMax.sodium.ToString() + "mg";
+
+        humanIntake.totalFat -= itemData.totalFat;
+        fillRatio = (float)humanIntake.totalFat / humanIntakeMax.totalFat;
+        TotalFatProgressBar.fillAmount = fillRatio;
+        totalFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        totalFatConsumedCount.text = humanIntake.totalFat.ToString() + "/" + humanIntakeMax.totalFat.ToString() + "g";
+
+        humanIntake.potassium -= itemData.potassium;
+        fillRatio = (float)humanIntake.potassium / humanIntakeMax.potassium;
+        PottasiumProgressBar.fillAmount = fillRatio;
+        pottasiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        pottasiumConsumedCount.text = humanIntake.potassium.ToString() + "/" + humanIntakeMax.potassium.ToString();
+
+        humanIntake.saturatedFat -= itemData.saturatedFat;
+        fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        SaturatedFatProgressBar.fillAmount = fillRatio;
+        saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
+
+        humanIntake.carbohydrates -= itemData.carbohydrates;
+        fillRatio = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
+        CarbohydratesProgressBar.fillAmount = fillRatio;
+        carbohydratesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        carbohydratesConsumedCount.text = humanIntake.carbohydrates.ToString() + "/" + humanIntakeMax.carbohydrates.ToString();
+
+        humanIntake.polySaturatedFat -= itemData.polySaturatedFat;
+        fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        PolySaturatedFatProgressBar.fillAmount = fillRatio;
+        polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
+
+        humanIntake.dietaryFiber -= itemData.dietaryFiber;
+        fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        DietaryFiberProgressBar.fillAmount = fillRatio;
+        dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
+
+        humanIntake.monounSaturatedFat -= itemData.monounSaturatedFat;
+        fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        MonounSaturatedFatProgressBar.fillAmount = fillRatio;
+        monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
+
+        humanIntake.sugars -= itemData.sugars;
+        fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        SugarProgressBar.fillAmount = fillRatio;
+        sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
+
+        humanIntake.transFat -= itemData.transFat;
+        fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        TransFatProgressBar.fillAmount = fillRatio;
+        transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
+
+        humanIntake.protien -= itemData.protien;
+        fillRatio = (float)humanIntake.protien / humanIntakeMax.protien;
+        ProteinProgressBar.fillAmount = fillRatio;
+        proteinPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        proteinConsumedCount.text = humanIntake.protien.ToString() + "/" + humanIntakeMax.protien.ToString();
+
+        humanIntake.cholesterol -= itemData.cholesterol;
+        fillRatio = (float)humanIntake.cholesterol / humanIntakeMax.cholesterol;
+        CholesterolProgressBar.fillAmount = fillRatio;
+        cholestrolPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        cholesterolConsumedCount.text = humanIntake.cholesterol.ToString() + "/" + humanIntakeMax.cholesterol.ToString();
+
+        humanIntake.vitaminA -= itemData.vitaminA;
+        fillRatio = (float)humanIntake.vitaminA / humanIntakeMax.vitaminA;
+        VitaminAProgressBar.fillAmount = fillRatio;
+        vitaminAPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        vitaminAConsumedCount.text = humanIntake.vitaminA.ToString() + "/" + humanIntakeMax.vitaminA.ToString();
+
+        humanIntake.calcium -= itemData.calcium;
+        fillRatio = (float)humanIntake.calcium / humanIntakeMax.calcium;
+        CalciumProgressBar.fillAmount = fillRatio;
+        calciumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        calciumConsumedCount.text = humanIntake.calcium.ToString() + "/" + humanIntakeMax.calcium.ToString();
+
+        humanIntake.vitaminB -= itemData.vitaminB;
+        fillRatio = (float)humanIntake.vitaminB / humanIntakeMax.vitaminB;
+        VitaminCProgressBar.fillAmount = fillRatio;
+        vitaminCPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        vitaminCConsumedCount.text = humanIntake.vitaminB.ToString() + "/" + humanIntakeMax.vitaminB.ToString();
+
+        humanIntake.iron -= itemData.iron;
+        fillRatio = (float)humanIntake.iron / humanIntakeMax.iron;
+        IronProgressBar.fillAmount = fillRatio;
+        ironPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        ironConsumedCount.text = humanIntake.iron.ToString() + "/" + humanIntakeMax.iron.ToString();
+
+        if (humanIntake.calories >= humanIntakeMax.calories)
+        {
+
+        }
+        if (humanIntake.sodium >= humanIntakeMax.sodium)
+        {
+
+        }
+        if (humanIntake.totalFat >= humanIntakeMax.totalFat)
+        {
+
+        }
+        if (humanIntake.potassium >= humanIntakeMax.potassium)
+        {
+
+        }
+        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        {
+
+        }
+        if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
+        {
+
+        }
+        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        {
+
+        }
+        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        {
+
+        }
+        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        {
+
+        }
+        if (humanIntake.sugars >= humanIntakeMax.sugars)
+        {
+
+        }
+        if (humanIntake.transFat >= humanIntakeMax.transFat)
+        {
+
+
+        }
+        if (humanIntake.protien >= humanIntakeMax.protien)
+        {
+
+        }
+        if (humanIntake.cholesterol >= humanIntakeMax.cholesterol)
+        {
+
+        }
+        if (humanIntake.vitaminA >= humanIntakeMax.vitaminA)
+        {
+
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+
+        }
+        if (humanIntake.vitaminB >= humanIntakeMax.vitaminB)
+        {
+
+        }
+        if (humanIntake.iron >= humanIntakeMax.iron)
+        {
+
+        }
+
+        AnimateUserConsumption();
+    }
+
+    public void AnimateUserConsumption()
+    {
+        if (isRunningConsumptionPanelAnimation) return;
+
+        isRunningConsumptionPanelAnimation = true;
+
+        userConsumptionCG.DOFade(1, 1f).OnComplete(
+            () => 
+            {
+                userConsumptionCG.DOFade(1, 2f).OnComplete(
+                    () =>
+                    {
+                        userConsumptionCG.DOFade(0, 1f).OnComplete(
+                            () =>
+                            {
+                                isRunningConsumptionPanelAnimation = false;
+                            }
+                        );
+                    }
+                    );
+            }
+        );
     }
 
     private void Update()
@@ -301,14 +516,9 @@ public class PlayerManager : MonoBehaviour
 
     public void ShowUserConsumptionPanel()
     {
-        if (userConsumptionPanel.activeInHierarchy)
-        {
-            userConsumptionPanel.SetActive(false);
-        }
-        else
-        {
-            userConsumptionPanel.SetActive(true);       
-        }
+        if (isRunningConsumptionPanelAnimation) return;
+
+        userConsumptionCG.alpha = userConsumptionCG.alpha == 1 ? 0 : 1;
     }
 
     public void OnRayCastHitAction(ItemData itemData)
@@ -318,7 +528,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ConsumeItem(itemData);
+            AddConsumeItem(itemData);
         }
     }
 
