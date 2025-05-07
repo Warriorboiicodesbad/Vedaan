@@ -7,6 +7,12 @@ using UnityEditor;
 public class MenuManager : MonoBehaviour
 {
     public string gameSceneName;
+    public PlayerData playerData;
+
+    private void Awake()
+    {
+        GameData.currentLevel = playerData.day;
+    }
 
     // Start is called before the first frame update
     public void PlayButtonAction()

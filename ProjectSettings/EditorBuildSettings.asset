@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4fb9a8210210a5d4a904d6a677c78d79
   - enabled: 1
+    path: Assets/Scenes/Player input.unity
+    guid: 95c87f63e0b23e44493317bcee30c3e9
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Timeover.unity
+    guid: ab52742dfd408054a92780d772a054db
+  - enabled: 1
+    path: Assets/Scenes/CompletedIntake.unity
+    guid: 6f603a7abf9f5e2459c5fefe9ab6c14c
   m_configObjects: {}

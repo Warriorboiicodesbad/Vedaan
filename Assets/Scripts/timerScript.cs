@@ -26,6 +26,7 @@ public class TimerController : MonoBehaviour
             {
                 currentTime = 0;
                 isRunning = false;
+                GameData.OnTimerOver.Invoke();
             }
 
             UpdateTimerText();

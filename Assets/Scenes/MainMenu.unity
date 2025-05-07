@@ -741,7 +741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120429501ba87a24980af3c3365cf97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: GameScene
+  gameSceneName: Player input
+  playerData: {fileID: 11400000, guid: d661e157eb8793d4e909f85d645cef5f, type: 2}
 --- !u!114 &612407370
 MonoBehaviour:
   m_ObjectHideFlags: 0

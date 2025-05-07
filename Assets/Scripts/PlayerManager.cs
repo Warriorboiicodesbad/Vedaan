@@ -4,11 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     public ItemData humanIntake;
     public ItemData humanIntakeMax;
+    public List<ItemData> daysIntakeData;
 
     [Header("Item Information Panel Texts")]
     public TMP_Text itemNameTxt;
@@ -98,6 +100,22 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         AddConsumeItem(emptyItem);
+    }
+
+    private void OnEnable()
+    {
+        GameData.OnTimerOver.AddListener(OnTimerOver);
+    }
+
+    private void OnDisable()
+    {
+        GameData.OnTimerOver.RemoveListener(OnTimerOver);
+    }
+
+    private void OnTimerOver()
+    {
+        humanIntake = ScriptableObject.CreateInstance<ItemData>();
+        SceneManager.LoadScene("Timeover");
     }
 
     public void ShowItemInformationPanel(ItemData itemData)
@@ -519,6 +537,160 @@ public class PlayerManager : MonoBehaviour
         if (isRunningConsumptionPanelAnimation) return;
 
         userConsumptionCG.alpha = userConsumptionCG.alpha == 1 ? 0 : 1;
+    }
+
+    public bool CheckCanConsumeItems()
+    {
+        bool consumptionComplete = false;
+
+        if (humanIntake.calories >= humanIntakeMax.calories)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;
+        }
+        if (humanIntake.sodium >= humanIntakeMax.sodium)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;
+        }
+        if (humanIntake.totalFat >= humanIntakeMax.totalFat)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.potassium >= humanIntakeMax.potassium)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.sugars >= humanIntakeMax.sugars)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.transFat >= humanIntakeMax.transFat)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;
+        }
+        if (humanIntake.protien >= humanIntakeMax.protien)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.cholesterol >= humanIntakeMax.cholesterol)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.vitaminA >= humanIntakeMax.vitaminA)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.calcium >= humanIntakeMax.calcium)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.vitaminB >= humanIntakeMax.vitaminB)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+        if (humanIntake.iron >= humanIntakeMax.iron)
+        {
+            consumptionComplete &= true;
+        }
+        else
+        {
+            consumptionComplete &= false;    
+        }
+
+
+        return consumptionComplete;
+    }
+
+    public void ConsumeItems()
+    {
+        if (CheckCanConsumeItems())
+        {
+            GameData.CopyScriptableObjectData(humanIntake, daysIntakeData[GameData.currentLevel - 1]);
+            humanIntake = ScriptableObject.CreateInstance<ItemData>();
+        }
     }
 
     public void OnRayCastHitAction(ItemData itemData)

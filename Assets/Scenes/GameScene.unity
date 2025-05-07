@@ -60858,6 +60858,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanIntake: {fileID: 11400000, guid: 0e7630eef34652647a9f173fa679afdd, type: 2}
   humanIntakeMax: {fileID: 11400000, guid: ddb1dd7c68333d24bb7b23dd0fda2ab8, type: 2}
+  daysIntakeData:
+  - {fileID: 11400000, guid: bad4837dae4e2794a8881ba64aaffdb0, type: 2}
+  - {fileID: 11400000, guid: 471c211d7d72c6140be94817b5be90a1, type: 2}
+  - {fileID: 11400000, guid: 0e306320071c5bd43a845c92bb355c58, type: 2}
   itemNameTxt: {fileID: 1341529218}
   itemCaloriesCount: {fileID: 566584562}
   itemSodiumCount: {fileID: 842111151}
@@ -61024,7 +61028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManager: {fileID: 1953583581}
   cartManager: {fileID: 1953583584}
-  buyButton: {fileID: 2101380092}
+  buyButton: {fileID: 2101380094}
 --- !u!1 &1954043231
 GameObject:
   m_ObjectHideFlags: 0

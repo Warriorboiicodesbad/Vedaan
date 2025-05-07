@@ -26,6 +26,8 @@ public class CartManager : MonoBehaviour
             cartPanel.SetActive(!cartPanel.activeInHierarchy);
             playerController.enabled = !cartPanel.activeInHierarchy;
             Cursor.lockState = cartPanel.activeInHierarchy ? CursorLockMode.None : CursorLockMode.Locked;
+
+            if (GameData.isCheckingOut) playerManager.itemInformationPanel.SetActive(false);
         }
     }
 

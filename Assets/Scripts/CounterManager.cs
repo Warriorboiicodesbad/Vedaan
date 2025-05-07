@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CounterManager : MonoBehaviour
 {
     [SerializeField] PlayerManager playerManager;
     [SerializeField] CartManager cartManager;
-    [SerializeField] GameObject buyButton;
+    [SerializeField] Button buyButton;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Checkout"))
         {
+            GameData.isCheckingOut = true;
             playerManager.userConsumptionCG.alpha = 1;
-            cartManager.cartPanel.SetActive(true);
-            buyButton.SetActive(true);
+
+            buyButton.gameObject.SetActive(true);
+            if(playerManager.CheckCanConsumeItems())
+            {
+                buyButton.interactable = true;
+            }
+            else
+            {
+                buyButton.interactable = false;
+                InstructionsManager.Instance.AddInstruction(GameData.intakeNotCompletedInstruction);
+            }
         }
     }
 
@@ -22,16 +34,19 @@ public class CounterManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Checkout"))
         {
+            GameData.isCheckingOut = false;
             playerManager.userConsumptionCG.alpha = 0;
-            cartManager.cartPanel.SetActive(false);
-            buyButton.SetActive(false);
+
+            buyButton.gameObject.SetActive(false);
+            InstructionsManager.Instance.RemoveInstruction(GameData.intakeNotCompletedInstruction);
         }
     }
 
     public void BuyCart()
     {
+        GameData.isCheckingOut = false;
         playerManager.userConsumptionCG.alpha = 0;
-        cartManager.cartPanel.SetActive(false);
-        buyButton.SetActive(false);
+        playerManager.ConsumeItems();
+        SceneManager.LoadScene("CompletedIntake");
     }
 }
