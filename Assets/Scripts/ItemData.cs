@@ -6,20 +6,20 @@ public class ItemData : ScriptableObject
 {
     public Sprite Image;
     public int calories;
-    public float sodium;
     public float totalFat;
-    public float potassium;
-    public float saturatedFat;
-    public int carbohydrates;
-    public float polySaturatedFat;
-    public float dietaryFiber;
-    public float monounSaturatedFat;
-    public float sugars;
-    public float transFat;
-    public int protien;
     public float cholesterol;
-    public float vitaminA;
-    public float calcium;
-    public float vitaminB;
+    public float sodium;
+    public float potassium;
+    public int carbohydrates;
+    public int protien;
     public float iron;  
+    public float calcium;
+    public float vitaminA;
+    public float vitaminB;
+    //public float saturatedFat;
+    //public float polySaturatedFat;
+    //public float dietaryFiber;
+    //public float monounSaturatedFat;
+    //public float sugars;
+    //public float transFat;
 }

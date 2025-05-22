@@ -95,11 +95,15 @@ public class PlayerManager : MonoBehaviour
     public GameObject instructionPanel;
     public ItemData emptyItem;
 
+    [SerializeField] TMP_Text consumptionTxt, dayTxt;
+
     private bool isRunningConsumptionPanelAnimation = false;
+    public float totalConsumptionPercentage = 0f;
 
     private void Start()
     {
         AddConsumeItem(emptyItem);
+        dayTxt.text = $"Day {GameData.currentLevel.ToString()}";
     }
 
     private void OnEnable()
@@ -125,13 +129,13 @@ public class PlayerManager : MonoBehaviour
         itemSodiumCount.text = itemData.sodium.ToString();
         itemTotalFatCount.text = itemData.totalFat.ToString();
         itemPottasiumCount.text = itemData.potassium.ToString();
-        itemSaturatedFatCount.text = itemData.saturatedFat.ToString();
+        //itemSaturatedFatCount.text = itemData.saturatedFat.ToString();
         itemCarbohydratesCount.text = itemData.carbohydrates.ToString();
-        itemPolySaturatedFatCount.text = itemData.polySaturatedFat.ToString();
-        itemDietaryFiberCount.text = itemData.dietaryFiber.ToString();
-        itemMonounSaturatedFatCount.text = itemData.monounSaturatedFat.ToString();
-        itemSugarsCount.text = itemData.sugars.ToString();
-        itemTransFatCount.text = itemData.transFat.ToString();
+        //itemPolySaturatedFatCount.text = itemData.polySaturatedFat.ToString();
+        //itemDietaryFiberCount.text = itemData.dietaryFiber.ToString();
+        //itemMonounSaturatedFatCount.text = itemData.monounSaturatedFat.ToString();
+        //itemSugarsCount.text = itemData.sugars.ToString();
+        //itemTransFatCount.text = itemData.transFat.ToString();
         itemProtienCount.text = itemData.protien.ToString();
         itemCholesterolCount.text = itemData.cholesterol.ToString();
         itemVitamimnACount.text = itemData.vitaminA.ToString();
@@ -170,11 +174,11 @@ public class PlayerManager : MonoBehaviour
         pottasiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         pottasiumConsumedCount.text = humanIntake.potassium.ToString() + "/" + humanIntakeMax.potassium.ToString();
         
-        humanIntake.saturatedFat += itemData.saturatedFat;
-        fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
-        SaturatedFatProgressBar.fillAmount = fillRatio;
-        saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
+        //humanIntake.saturatedFat += itemData.saturatedFat;
+        //fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        //SaturatedFatProgressBar.fillAmount = fillRatio;
+        //saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
 
         humanIntake.carbohydrates += itemData.carbohydrates;
         fillRatio = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
@@ -182,35 +186,35 @@ public class PlayerManager : MonoBehaviour
         carbohydratesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         carbohydratesConsumedCount.text = humanIntake.carbohydrates.ToString() + "/" + humanIntakeMax.carbohydrates.ToString();
 
-        humanIntake.polySaturatedFat += itemData.polySaturatedFat;
-        fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
-        PolySaturatedFatProgressBar.fillAmount = fillRatio;
-        polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
+        //humanIntake.polySaturatedFat += itemData.polySaturatedFat;
+        //fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        //PolySaturatedFatProgressBar.fillAmount = fillRatio;
+        //polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
 
-        humanIntake.dietaryFiber += itemData.dietaryFiber;
-        fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
-        DietaryFiberProgressBar.fillAmount = fillRatio;
-        dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
+        //humanIntake.dietaryFiber += itemData.dietaryFiber;
+        //fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        //DietaryFiberProgressBar.fillAmount = fillRatio;
+        //dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
 
-        humanIntake.monounSaturatedFat += itemData.monounSaturatedFat;
-        fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
-        MonounSaturatedFatProgressBar.fillAmount = fillRatio;
-        monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
+        //humanIntake.monounSaturatedFat += itemData.monounSaturatedFat;
+        //fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        //MonounSaturatedFatProgressBar.fillAmount = fillRatio;
+        //monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
         
-        humanIntake.sugars += itemData.sugars;
-        fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
-        SugarProgressBar.fillAmount = fillRatio;
-        sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
+        //humanIntake.sugars += itemData.sugars;
+        //fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        //SugarProgressBar.fillAmount = fillRatio;
+        //sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
 
-        humanIntake.transFat += itemData.transFat;
-        fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
-        TransFatProgressBar.fillAmount = fillRatio;
-        transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
+        //humanIntake.transFat += itemData.transFat;
+        //fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        //TransFatProgressBar.fillAmount = fillRatio;
+        //transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
 
         humanIntake.protien += itemData.protien;
         fillRatio = (float)humanIntake.protien / humanIntakeMax.protien;
@@ -264,35 +268,35 @@ public class PlayerManager : MonoBehaviour
         {
 
         }
-        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
-        {
+        //if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        //{
 
-        }
+        //}
         if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
         {
 
         }
-        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
-        {
+        //if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        //{
 
-        }
-        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
-        {
+        //}
+        //if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        //{
 
-        }
-        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
-        {
+        //}
+        //if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        //{
 
-        }
-        if (humanIntake.sugars >= humanIntakeMax.sugars)
-        {
+        //}
+        //if (humanIntake.sugars >= humanIntakeMax.sugars)
+        //{
 
-        }
-        if (humanIntake.transFat >= humanIntakeMax.transFat)
-        {
+        //}
+        //if (humanIntake.transFat >= humanIntakeMax.transFat)
+        //{
 
 
-        }
+        //}
         if (humanIntake.protien >= humanIntakeMax.protien)
         {
 
@@ -319,6 +323,17 @@ public class PlayerManager : MonoBehaviour
         }
 
         AnimateUserConsumption();
+
+        if (CheckCanConsumeItems())
+        {
+            consumptionTxt.text = $"Consumption Complete : {totalConsumptionPercentage}";
+            consumptionTxt.color = Color.green;
+        }
+        else
+        {
+            consumptionTxt.text = $"Consumption Incomplete : {totalConsumptionPercentage}";
+            consumptionTxt.color = Color.red;
+        }
     }
 
     public void RemoveConsumeItem(ItemData itemData)
@@ -349,11 +364,11 @@ public class PlayerManager : MonoBehaviour
         pottasiumPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         pottasiumConsumedCount.text = humanIntake.potassium.ToString() + "/" + humanIntakeMax.potassium.ToString();
 
-        humanIntake.saturatedFat -= itemData.saturatedFat;
-        fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
-        SaturatedFatProgressBar.fillAmount = fillRatio;
-        saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
+        //humanIntake.saturatedFat -= itemData.saturatedFat;
+        //fillRatio = (float)humanIntake.saturatedFat / humanIntakeMax.saturatedFat;
+        //SaturatedFatProgressBar.fillAmount = fillRatio;
+        //saturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //saturatedFatConsumedCount.text = humanIntake.saturatedFat.ToString() + "/" + humanIntakeMax.saturatedFat.ToString();
 
         humanIntake.carbohydrates -= itemData.carbohydrates;
         fillRatio = (float)humanIntake.carbohydrates / humanIntakeMax.carbohydrates;
@@ -361,35 +376,35 @@ public class PlayerManager : MonoBehaviour
         carbohydratesPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
         carbohydratesConsumedCount.text = humanIntake.carbohydrates.ToString() + "/" + humanIntakeMax.carbohydrates.ToString();
 
-        humanIntake.polySaturatedFat -= itemData.polySaturatedFat;
-        fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
-        PolySaturatedFatProgressBar.fillAmount = fillRatio;
-        polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
+        //humanIntake.polySaturatedFat -= itemData.polySaturatedFat;
+        //fillRatio = (float)humanIntake.polySaturatedFat / humanIntakeMax.polySaturatedFat;
+        //PolySaturatedFatProgressBar.fillAmount = fillRatio;
+        //polySaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //polySaturatedFatConsumedCount.text = humanIntake.polySaturatedFat.ToString() + "/" + humanIntakeMax.polySaturatedFat.ToString();
 
-        humanIntake.dietaryFiber -= itemData.dietaryFiber;
-        fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
-        DietaryFiberProgressBar.fillAmount = fillRatio;
-        dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
+        //humanIntake.dietaryFiber -= itemData.dietaryFiber;
+        //fillRatio = (float)humanIntake.dietaryFiber / humanIntakeMax.dietaryFiber;
+        //DietaryFiberProgressBar.fillAmount = fillRatio;
+        //dietaryFibrePercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //dietaryFiberConsumedCount.text = humanIntake.dietaryFiber.ToString() + "/" + humanIntakeMax.dietaryFiber.ToString();
 
-        humanIntake.monounSaturatedFat -= itemData.monounSaturatedFat;
-        fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
-        MonounSaturatedFatProgressBar.fillAmount = fillRatio;
-        monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
+        //humanIntake.monounSaturatedFat -= itemData.monounSaturatedFat;
+        //fillRatio = (float)humanIntake.monounSaturatedFat / humanIntakeMax.monounSaturatedFat;
+        //MonounSaturatedFatProgressBar.fillAmount = fillRatio;
+        //monounSaturatedFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //monounSaturatedFatConsumedCount.text = humanIntake.monounSaturatedFat.ToString() + "/" + humanIntakeMax.monounSaturatedFat.ToString();
 
-        humanIntake.sugars -= itemData.sugars;
-        fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
-        SugarProgressBar.fillAmount = fillRatio;
-        sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
+        //humanIntake.sugars -= itemData.sugars;
+        //fillRatio = (float)humanIntake.sugars / humanIntakeMax.sugars;
+        //SugarProgressBar.fillAmount = fillRatio;
+        //sugarPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //sugarConsumedCount.text = humanIntake.sugars.ToString() + "/" + humanIntakeMax.sugars.ToString();
 
-        humanIntake.transFat -= itemData.transFat;
-        fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
-        TransFatProgressBar.fillAmount = fillRatio;
-        transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
-        transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
+        //humanIntake.transFat -= itemData.transFat;
+        //fillRatio = (float)humanIntake.transFat / humanIntakeMax.transFat;
+        //TransFatProgressBar.fillAmount = fillRatio;
+        //transFatPercentageText.text = $"{((int)(fillRatio * 100)).ToString()}%";
+        //transFatConsumedCount.text = humanIntake.transFat.ToString() + "/" + humanIntakeMax.transFat.ToString();
 
         humanIntake.protien -= itemData.protien;
         fillRatio = (float)humanIntake.protien / humanIntakeMax.protien;
@@ -443,35 +458,35 @@ public class PlayerManager : MonoBehaviour
         {
 
         }
-        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
-        {
+        //if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        //{
 
-        }
+        //}
         if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
         {
 
         }
-        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
-        {
+        //if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        //{
 
-        }
-        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
-        {
+        //}
+        //if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        //{
 
-        }
-        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
-        {
+        //}
+        //if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        //{
 
-        }
-        if (humanIntake.sugars >= humanIntakeMax.sugars)
-        {
+        //}
+        //if (humanIntake.sugars >= humanIntakeMax.sugars)
+        //{
 
-        }
-        if (humanIntake.transFat >= humanIntakeMax.transFat)
-        {
+        //}
+        //if (humanIntake.transFat >= humanIntakeMax.transFat)
+        //{
 
 
-        }
+        //}
         if (humanIntake.protien >= humanIntakeMax.protien)
         {
 
@@ -498,6 +513,17 @@ public class PlayerManager : MonoBehaviour
         }
 
         AnimateUserConsumption();
+
+        if (CheckCanConsumeItems())
+        {
+            consumptionTxt.text = $"Consumption Complete : {totalConsumptionPercentage}";
+            consumptionTxt.color = Color.green;
+        }
+        else
+        {
+            consumptionTxt.text = $"Consumption Incomplete : {totalConsumptionPercentage}";
+            consumptionTxt.color = Color.red;
+        }
     }
 
     public void AnimateUserConsumption()
@@ -526,7 +552,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.V))
         {
             ShowUserConsumptionPanel();
         }
@@ -541,147 +567,162 @@ public class PlayerManager : MonoBehaviour
 
     public bool CheckCanConsumeItems()
     {
-        bool consumptionComplete = false;
+        float totalPercentage = 0f;
 
         if (humanIntake.calories >= humanIntakeMax.calories)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.calories - humanIntakeMax.calories) / humanIntakeMax.calories) * 100;
         }
         else
         {
-            consumptionComplete &= false;
+            totalPercentage += ((humanIntakeMax.calories - humanIntake.calories) / humanIntakeMax.calories) * 100;
         }
+
         if (humanIntake.sodium >= humanIntakeMax.sodium)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.sodium - humanIntakeMax.sodium) / humanIntakeMax.sodium) * 100;
         }
         else
         {
-            consumptionComplete &= false;
+            totalPercentage += ((humanIntakeMax.sodium - humanIntake.sodium) / humanIntakeMax.sodium) * 100;
         }
+
         if (humanIntake.totalFat >= humanIntakeMax.totalFat)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.totalFat - humanIntakeMax.totalFat) / humanIntakeMax.totalFat) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.totalFat - humanIntake.totalFat) / humanIntakeMax.totalFat) * 100;    
         }
+
         if (humanIntake.potassium >= humanIntakeMax.potassium)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.potassium - humanIntakeMax.potassium) / humanIntakeMax.potassium) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.potassium - humanIntake.potassium) / humanIntakeMax.potassium) * 100;    
         }
-        if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;    
-        }
+        //if (humanIntake.saturatedFat >= humanIntakeMax.saturatedFat)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;    
+        //}
         if (humanIntake.carbohydrates >= humanIntakeMax.carbohydrates)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.carbohydrates - humanIntakeMax.carbohydrates) / humanIntakeMax.carbohydrates) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.carbohydrates - humanIntake.carbohydrates) / humanIntakeMax.carbohydrates) * 100;    
         }
-        if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;    
-        }
-        if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;    
-        }
-        if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;    
-        }
-        if (humanIntake.sugars >= humanIntakeMax.sugars)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;    
-        }
-        if (humanIntake.transFat >= humanIntakeMax.transFat)
-        {
-            consumptionComplete &= true;
-        }
-        else
-        {
-            consumptionComplete &= false;
-        }
+        //if (humanIntake.polySaturatedFat >= humanIntakeMax.polySaturatedFat)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;    
+        //}
+        //if (humanIntake.dietaryFiber >= humanIntakeMax.dietaryFiber)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;    
+        //}
+        //if (humanIntake.monounSaturatedFat >= humanIntakeMax.monounSaturatedFat)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;    
+        //}
+        //if (humanIntake.sugars >= humanIntakeMax.sugars)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;    
+        //}
+        //if (humanIntake.transFat >= humanIntakeMax.transFat)
+        //{
+        //    consumptionComplete &= true;
+        //}
+        //else
+        //{
+        //    consumptionComplete &= false;
+        //}
         if (humanIntake.protien >= humanIntakeMax.protien)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.protien - humanIntakeMax.protien) / humanIntakeMax.protien) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.protien - humanIntake.protien) / humanIntakeMax.protien) * 100;    
         }
+
+
         if (humanIntake.cholesterol >= humanIntakeMax.cholesterol)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.cholesterol - humanIntakeMax.cholesterol) / humanIntakeMax.cholesterol) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.cholesterol - humanIntake.cholesterol) / humanIntakeMax.cholesterol) * 100;    
         }
+
         if (humanIntake.vitaminA >= humanIntakeMax.vitaminA)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.vitaminA - humanIntakeMax.vitaminA) / humanIntakeMax.vitaminA) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.vitaminA - humanIntake.vitaminA) / humanIntakeMax.vitaminA) * 100;    
         }
+
+
         if (humanIntake.calcium >= humanIntakeMax.calcium)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.calcium - humanIntakeMax.calcium) / humanIntakeMax.calcium) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.calcium - humanIntake.calcium) / humanIntakeMax.calcium) * 100;    
         }
+
         if (humanIntake.vitaminB >= humanIntakeMax.vitaminB)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.vitaminB - humanIntakeMax.vitaminB) / humanIntakeMax.vitaminB) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.vitaminB - humanIntake.vitaminB) / humanIntakeMax.vitaminB) * 100;    
         }
+
+
         if (humanIntake.iron >= humanIntakeMax.iron)
         {
-            consumptionComplete &= true;
+            totalPercentage += ((humanIntake.iron - humanIntakeMax.iron) / humanIntakeMax.iron) * 100;
         }
         else
         {
-            consumptionComplete &= false;    
+            totalPercentage += ((humanIntakeMax.iron - humanIntake.iron) / humanIntakeMax.iron) * 100;    
         }
 
+        totalPercentage /= 11;
 
-        return consumptionComplete;
+        totalConsumptionPercentage = totalPercentage;
+
+        if (totalPercentage > 75f) return false;
+        else return true;
     }
 
     public void ConsumeItems()
@@ -689,7 +730,17 @@ public class PlayerManager : MonoBehaviour
         if (CheckCanConsumeItems())
         {
             GameData.CopyScriptableObjectData(humanIntake, daysIntakeData[GameData.currentLevel - 1]);
-            humanIntake = ScriptableObject.CreateInstance<ItemData>();
+            humanIntake.calories = 0;
+            humanIntake.calcium = 0;
+            humanIntake.vitaminB = 0;
+            humanIntake.carbohydrates = 0;
+            humanIntake.cholesterol = 0;
+            humanIntake.iron = 0;
+            humanIntake.protien = 0;
+            humanIntake.vitaminA = 0;
+            humanIntake.potassium = 0;
+            humanIntake.totalFat = 0;
+            humanIntake.sodium = 0;
         }
     }
 

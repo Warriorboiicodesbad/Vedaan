@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -47,7 +48,9 @@ public class CartManager : MonoBehaviour
             cartItem.itemData = itemData;
             cartItem.itemNameTxt.text = itemData.name;
             cartItem.itemImage.sprite = itemData.Image;
-            cartItem.decreaseButton.onClick.AddListener(() => { playerManager.RemoveConsumeItem(itemData); });
+            cartItem.decreaseButton.onClick.AddListener(() => { 
+                playerManager.RemoveConsumeItem(itemData); 
+            });
             cartItem.cartItemButton.onClick.AddListener(() => { playerManager.ShowItemInformationPanel(itemData); });
             cartItem.Increase();
         }

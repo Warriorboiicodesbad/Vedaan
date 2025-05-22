@@ -18,12 +18,12 @@ public class CompletedIntakeSceneManager : MonoBehaviour
 
         GameData.currentLevel++;
         playerData.day = GameData.currentLevel;
-        if (GameData.currentLevel >= GameData.maxLevel)
+
+        if (GameData.currentLevel > GameData.maxLevel)
         {
             allDaysCompletedTxt.gameObject.SetActive(true);
             nextButton.SetActive(false);
         }
-
     }
 
     public void LoadScene(string sceneName)

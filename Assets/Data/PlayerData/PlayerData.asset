@@ -18,6 +18,7 @@ MonoBehaviour:
   day2: {fileID: 11400000, guid: 471c211d7d72c6140be94817b5be90a1, type: 2}
   day3: {fileID: 11400000, guid: 0e306320071c5bd43a845c92bb355c58, type: 2}
   height: 0
-  weight: 90
-  age: 909090
-  gender: 1
+  weight: 0
+  age: 0
+  gender: 0
+  bmr: 1685

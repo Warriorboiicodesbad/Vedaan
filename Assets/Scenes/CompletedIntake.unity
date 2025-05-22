@@ -230,6 +230,7 @@ MonoBehaviour:
   feedbackTxt: {fileID: 977519611}
   allDaysCompletedTxt: {fileID: 725118522}
   nextButton: {fileID: 1127387169}
+  playerData: {fileID: 11400000, guid: d661e157eb8793d4e909f85d645cef5f, type: 2}
 --- !u!1 &554539070
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &725118521
 RectTransform:
   m_ObjectHideFlags: 0

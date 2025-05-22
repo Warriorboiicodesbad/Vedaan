@@ -61,9 +61,9 @@ public class dataHandler : MonoBehaviour
 
         humanIntakeMax.calories = (int)playerInfo.bmr;
         humanIntakeMax.totalFat = humanIntakeMax.calories * 0.3f;
-        humanIntakeMax.transFat = humanIntakeMax.calories * 0.05f;
-        humanIntakeMax.saturatedFat = humanIntakeMax.calories * 0.07f;
-        humanIntakeMax.polySaturatedFat = humanIntakeMax.calories * 0.27f;
+        //humanIntakeMax.transFat = humanIntakeMax.calories * 0.05f;
+        //humanIntakeMax.saturatedFat = humanIntakeMax.calories * 0.07f;
+        //humanIntakeMax.polySaturatedFat = humanIntakeMax.calories * 0.27f;
         humanIntakeMax.protien = (int)(Random.Range(1.2f, 1.7f) * weight);
         humanIntakeMax.carbohydrates = (int)(humanIntakeMax.calories * Random.Range(0.45f, 0.65f));
 

@@ -12,20 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dce41cea3f2f5468f553d1faa0735b, type: 3}
   m_Name: Day2
   m_EditorClassIdentifier: 
+  Image: {fileID: 0}
   calories: 0
-  sodium: 0
   totalFat: 0
-  potassium: 0
-  saturatedFat: 0
-  carbohydrates: 0
-  polySaturatedFat: 0
-  dietaryFiber: 0
-  monounSaturatedFat: 0
-  sugars: 0
-  transFat: 0
-  protien: 0
   cholesterol: 0
-  vitaminA: 0
-  calcium: 0
-  vitaminB: 0
+  sodium: 0
+  potassium: 0
+  carbohydrates: 0
+  protien: 0
   iron: 0
+  calcium: 0
+  vitaminA: 0
+  vitaminB: 0

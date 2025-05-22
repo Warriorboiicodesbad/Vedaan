@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -34,10 +34,10 @@ public class PlayerController : MonoBehaviour
 
         virtualcamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //}
     }
     
 }
